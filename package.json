@@ -9,8 +9,8 @@
   },
   "main": "app.js",
   "scripts": {
-     "start": "node ./app.js",   
-    "dev": "nodemon ./app.js"
+     "start": "node ./app.js", 
+    "dev": "node --watch ./app.js"
   },
   "repository": {
     "type": "git",
