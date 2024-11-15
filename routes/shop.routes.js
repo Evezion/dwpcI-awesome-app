@@ -21,3 +21,6 @@ router.get('/about', (req, res) => {
     <p>App for Fullstack Web Dev Course I!</p>
   `);
 });
+
+// Exportando el enrutador admin
+export default router;
