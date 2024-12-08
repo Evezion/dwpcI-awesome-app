@@ -14,13 +14,14 @@ router.get('/', (req, res)=>{
   // Mostrando productos en memoria
   console.log(products);
   console.log("📢 Sirviendo la ruta '/'");
-  res.sendFile(path.resolve('views','shop.html'));
+  res.render('shop');
 });
 
 // GET /about
 router.get('/about', (req, res) => {
   console.log("📢 Sirviendo la ruta '/about'");
-  // Se contesta al server
+  // Se contesta al se
+  rver
   res.send(`
     <h1>🪄 About...</h1>
     <p>App for Fullstack Web Dev Course I!</p>
