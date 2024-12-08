@@ -1,5 +1,6 @@
-// Datos en memoria volatil
-export const products = [];
+// Importando el modelo producto
+import Product from '../models/product.js';
+
 // GET /admin/add-product
 export const getAddProduct = (req, res, next) => {
   // Servimos el formulario
@@ -10,18 +11,24 @@ export const getAddProduct = (req, res, next) => {
     docTitle: "Add Product"
   });
 };
+
 // POST /admin/add-product
 export const postAddProduct = (req, res) => {
   // Realizaremos la desestructuracion de
   // "name" de la petición
   const { title } = req.body;
-  // Agregamos el dato en la base de datos
-  products.push(title);
+  // Creamos una instancia de un producto
+  const product = new Product(title);
+  // Salvamos el producto
+  product.save();
   // Redireccionando
   return res.redirect('/');
 }
+
 // GET /
-export const getProducts = (req, res)=>{
+export const getProducts = (req, res) => {
+  // Recolectando todos los productos
+  const products = Product.fetchAll();
   // Mostrando productos en memoria
   console.log("📢 Sirviendo la ruta '/'");
   res.render('shop', { 
