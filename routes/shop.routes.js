@@ -1,5 +1,6 @@
 // Importando el enrutador de express
 import { Router } from 'express';
+
 // Importando el gestor de rutas
 import path from 'path';
 
@@ -14,19 +15,16 @@ router.get('/', (req, res)=>{
   // Mostrando productos en memoria
   console.log(products);
   console.log("📢 Sirviendo la ruta '/'");
-  res.render('shop');
+  res.render('shop', {shop: 'active', docTitle:"Shop"});
 });
 
 // GET /about
 router.get('/about', (req, res) => {
   console.log("📢 Sirviendo la ruta '/about'");
-  // Se contesta al se
-  rver
+  // Se contesta al sever
   res.send(`
     <h1>🪄 About...</h1>
     <p>App for Fullstack Web Dev Course I!</p>
   `);
 });
 
-// Exportando el enrutador admin
-export default router;
